@@ -4,13 +4,11 @@ import './App.css';
 import {Person, AddToCart} from './Person/Person'
 
 
-
-
 function App() {
   const [dets, setdets] = useState({Person:[{name:"John", age : "20"},
                                   {name:"Dipesh",age :"21"}]}) //state hook
-  const switchPersonState = () => {
-    setdets({Person:[{name:"Dzon", age : "20"},
+  const switchPersonState = (newName) => {
+    setdets({Person:[{name:newName, age : "20"},
                 {name:"Dipesh",age :"21"}]})
   }
 
@@ -22,7 +20,7 @@ function App() {
   return (
     <div className="App">
       <h1>This is my first react ap</h1>
-      <button onClick={switchPersonState}>Click Here</button>
+      <button onClick={()=>{switchPersonState('Dzasta')}}>Click Here</button>
       <Person name={dets.Person[0].name} age = {dets.Person[0].age} /> 
       <Person name={dets.Person[1].name} age = {dets.Person[1].age} >My hobby is Programming</Person>
       <AddToCart itemCount={count}/>
