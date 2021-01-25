@@ -13,18 +13,21 @@ function App() {
   }
 
   const [count,setCount] = useState(0)
-  const addCount = () => {
-    setCount(count+1)
+  // const addCount = () => {
+  //   setCount(count+1)
+  // }
+  const nameChangeHandler = (event) =>{
+    setdets({Person:[{name:event.target.value, age : "20"},
+                {name:"Dipesh",age :"21"}]})
   }
-
   return (
     <div className="App">
       <h1>This is my first react ap</h1>
-      <button onClick={()=>{switchPersonState('Dzasta')}}>Click Here</button>
+      <button onClick={switchPersonState.bind(this,"Dzasta")}>Click Here</button>
       <Person name={dets.Person[0].name} age = {dets.Person[0].age} /> 
-      <Person name={dets.Person[1].name} age = {dets.Person[1].age} >My hobby is Programming</Person>
+      <Person name={dets.Person[1].name} age = {dets.Person[1].age} changed={nameChangeHandler} >My hobby is Programming</Person>
       <AddToCart itemCount={count}/>
-      <button onClick={addCount}>Add to Cart</button>
+      <button onClick={()=>{setCount(count+1)}}>Add to Cart</button>
     </div>
     //React.createElement('div', {className:"App"}, React.createElement('h1',null,'This is hello world'))
 );
