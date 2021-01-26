@@ -1,5 +1,4 @@
-import logo from './logo.svg';
-import React, {Component, useState} from 'react';
+import React, {useState} from 'react';
 import './App.css';
 import {Person, AddToCart} from './Person/Person'
 import UserInput from './UserInput/UserInput'
